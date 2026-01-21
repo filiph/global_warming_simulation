@@ -4,14 +4,14 @@ using SpeedyWeather, GeoMakie, CairoMakie, Dates
 include("definitions.jl");
 
 const RUN_PERIOD = Day(365)
-const OUTPUT_TIMESTEP = Hour(12)
+const OUTPUT_TIMESTEP = Hour(1)
+const OUTPUT_DIR = "year3_T85"    # A directory to store the results.
 const RUN_ID = "a"
-const OUTPUT_DIR = "test1"    # A directory to store the results.
 const START_DATE = DateTime(2026, 5, 1)
 
 const CONTINUATION = true
-const CONTINUATION_DIR = "initial_cond"
-const CONTINUATION_ID = "run_a"
+const CONTINUATION_DIR = "test1"
+const CONTINUATION_ID = "a"
 const CONTINUATION_RUN_NUMBER = 1
 
 # --- Main Script ---
