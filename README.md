@@ -13,6 +13,14 @@ The classic response to that is to dismiss it with something like
 "weather is not climate" but that's an unsatisfying answer.
 I think it's better to show what's going on on a model.
 
+This is obviously **not** meant as a serious simulation of global warming.
+For that, there's "CMIP6 Simulations With the CMCC Earth System Model (CMCC‐ESM2)"
+and other research projects.
+What this project attempts to bring is something that can be easily played with
+on personal computers. You want to show how the planet's weather might look differently
+if it was "only" 10 °C hotter? Go ahead. The simulation will not be perfect
+by any means but it will be reasonably realistic and easy to visualize.
+
 
 ## Installation
 
