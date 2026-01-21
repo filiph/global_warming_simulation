@@ -1,18 +1,10 @@
 using SpeedyWeather, GeoMakie, CairoMakie, Dates
 
-# --- Configuration ---
-include("definitions.jl");
-
-const RUN_PERIOD = Day(365)
-const OUTPUT_TIMESTEP = Hour(1)
-const OUTPUT_DIR = "year3_T85"    # A directory to store the results.
-const RUN_ID = "a"
-const START_DATE = DateTime(2026, 5, 1)
-
-const CONTINUATION = true
-const CONTINUATION_DIR = "test1"
-const CONTINUATION_ID = "a"
-const CONTINUATION_RUN_NUMBER = 1
+# --- Getting configuration ---
+include("config_loader.jl")
+config_file_to_load = get_config_path()
+println("Loading configuration from: $config_file_to_load")
+include(config_file_to_load)
 
 # --- Main Script ---
 
