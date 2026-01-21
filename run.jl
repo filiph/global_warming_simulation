@@ -10,6 +10,7 @@ include(config_file_to_load)
 
 # 1. Setup
 println("Starting simulation setup...")
+println("  - Run Id: $RUN_ID")
 println("  - Truncation: T$TRUNC")
 println("  - Layers: $NLAYERS")
 println("  - Solar Constant: $SOLAR_CONSTANT W/m²")
@@ -43,6 +44,5 @@ println("Setup complete.")
 # 2. Run
 println("\nRunning simulation for a period of $RUN_PERIOD...")
 run!(simulation, period=RUN_PERIOD, output=true)
-println("Simulation finished.")
 
-println("\nAll tasks complete. Output is in the '$OUTPUT_DIR' directory.")
+println("\nSimulation finished. Output is in the '$OUTPUT_DIR' directory.")

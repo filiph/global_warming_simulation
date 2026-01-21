@@ -41,4 +41,4 @@ animate(input_path, output_file=filename_high,
   framerate=FRAME_RATE,
   figure_size=FIGURE_SIZE)
 
-println("\nAll tasks complete. Output is in the '$ANIM_INPUT_DIR' directory.")
+println("\nAnimation finished. Output is in the '$ANIM_INPUT_DIR' directory.")
