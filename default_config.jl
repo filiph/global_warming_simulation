@@ -1,14 +1,19 @@
 # Shared configuration
-const TRUNC = 85    # Lower resolution for faster test runs (e.g., 85, 340).
-const SOLAR_CONSTANT = 1365.0 
+
+# Lower resolution for faster test runs (e.g., 85, 127, 170, 255, 341 .. 1365).
+# https://speedyweather.github.io/SpeedyWeatherDocumentation/dev/spectral_transform/#Available-horizontal-resolutions
+const TRUNC = 85
 const NLAYERS = 8
+
+# The "warming" constant. Solar is normally 1365.0.
+const SOLAR_CONSTANT = 1365.0 
 
 
 # Simulation settings
 const RUN_PERIOD = Day(365)
 const OUTPUT_TIMESTEP = Hour(1)
 const OUTPUT_DIR = "year3_T85"    # A directory to store the results.
-const RUN_ID = "a"
+const RUN_ID = "warmed"
 const START_DATE = DateTime(2026, 5, 1)
 
 const CONTINUATION = true
