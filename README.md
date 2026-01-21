@@ -12,3 +12,21 @@ It addresses the classic issue people raise that goes something like:
 The classic response to that is to dismiss it with something like
 "weather is not climate" but that's an unsatisfying answer.
 I think it's better to show what's going on on a model.
+
+
+## Installation
+
+First, [install Julia](https://julialang.org/downloads/).
+
+Then, [install SpeedyWeather](https://speedyweather.github.io/SpeedyWeatherDocumentation/dev/installation/) and ArgParse (`add ArgParse`).
+
+## Running
+
+Create a new config file by copying one of the existing ones (such as `default_config.jl`).
+
+Then:
+
+1. Run the simulation with something like `julia --threads 8 run.jl --config your_config.jl`.
+2. Generate an MP4 animation by running `julia animate.jl --config your_config.jl`.
+
+These commands can take hours to complete if you insist on high resolutions. You've been warned.

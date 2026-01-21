@@ -16,7 +16,11 @@ const OUTPUT_DIR = "year3_T85"    # A directory to store the results.
 const RUN_ID = "warmed"
 const START_DATE = DateTime(2026, 5, 1)
 
+# Whether or not this simulation should start from the end of a previous run.
 const CONTINUATION = true
+
+# The location of the previous run. That run must be compatible with this one
+# (i.e. TRUNC and NLAYERS must be the same).
 const CONTINUATION_DIR = "test1"
 const CONTINUATION_ID = "a"
 const CONTINUATION_RUN_NUMBER = 1
