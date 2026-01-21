@@ -19,7 +19,7 @@ const CONTINUATION_RUN_NUMBER = 1
 
 # Animation settings
 const VARIANT = "contrast"
-const ANIM_INPUT_DIR = "test1/run_a_0001"
+const ANIM_INPUT_DIR = "year3_T85/run_a_0001"
 const LEVEL_LOW = 1
 const LEVEL_HIGH = NLAYERS - 1
 const FRAME_RATE = 15
