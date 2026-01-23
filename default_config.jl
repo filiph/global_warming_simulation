@@ -8,8 +8,8 @@ const NLAYERS = 8
 # How warm the sun is. This is normally 1365.0.
 const SOLAR_CONSTANT = 1365.0
 
-# The greenhouse effect. Turn this up for a hotter planet. Default is 0.
-const EMISSIVITY_ATMOSPHERE = 0.0
+# The greenhouse effect. Turn this down for a hotter planet. Default is 1.0.
+const EMISSIVITY = 1.0
 
 
 # Simulation settings

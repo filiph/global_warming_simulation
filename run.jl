@@ -17,7 +17,10 @@ println("  - Solar Constant: $SOLAR_CONSTANT W/m²")
 
 spectral_grid = SpectralGrid(trunc=TRUNC, nlayers=NLAYERS)
 planet = Earth(spectral_grid, solar_constant=SOLAR_CONSTANT)
-longwave = JeevanjeeRadiation(spectral_grid, emissivity_atmosphere=EMISSIVITY_ATMOSPHERE)
+longwave = JeevanjeeRadiation(spectral_grid,
+    emissivity_ocean = 0.65 * EMISSIVITY,
+    emissivity_land = 0.6 * EMISSIVITY,
+)
 
 mkpath(OUTPUT_DIR)
 output = NetCDFOutput(spectral_grid, 
