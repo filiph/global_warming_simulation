@@ -26,7 +26,7 @@ by any means but it will be reasonably realistic and easy to visualize.
 
 First, [install Julia](https://julialang.org/downloads/).
 
-Then, [install SpeedyWeather](https://speedyweather.github.io/SpeedyWeatherDocumentation/dev/installation/) and ArgParse, GeoMakie and CairoMakie (`add ArgParse, GeoMakie, CairoMakie`).
+Then, [install SpeedyWeather](https://speedyweather.github.io/SpeedyWeatherDocumentation/dev/installation/) and ArgParse, GeoMakie and CairoMakie (`add ArgParse, Makie, GeoMakie, CairoMakie`).
 
 ## Running
 
