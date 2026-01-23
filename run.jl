@@ -36,7 +36,7 @@ add!(model, ProgressTxt(every_n_percent=1)) # For continuous output.
 
 # Add the variables we want to save to the output
 add!(model, SpeedyWeather.TemperatureOutput())
-# add!(model, SpeedyWeather.HumidityOutput()) # You can uncomment this if needed
+add!(model, SpeedyWeather.HumidityOutput())
 
 simulation = initialize!(model, time=START_DATE)
 println("Setup complete.")

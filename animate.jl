@@ -18,27 +18,16 @@ println("\nGenerating animations...")
 input_path = joinpath(ANIM_INPUT_DIR, "output.nc");
 
 # Generate informative filenames automatically
-filename_low = joinpath(ANIM_INPUT_DIR, "temp_sc$(SOLAR_CONSTANT)_l$(LEVEL_LOW)_$(VARIANT).mp4")
-filename_high = joinpath(ANIM_INPUT_DIR, "temp_sc$(SOLAR_CONSTANT)_l$(LEVEL_HIGH)_$(VARIANT).mp4")
+filename = joinpath(ANIM_INPUT_DIR, "temp_sc$(SOLAR_CONSTANT)_$(ANIM_VAR)_l$(LEVEL_HIGH)_$(VARIANT).mp4")
 
-# println("  - Animating level $LEVEL_LOW -> $filename_low")
-# animate(input_path, output_file=filename_low, 
-#   projection=PROJECTION, 
-#   colorrange=COLOR_RANGE,
-#   colormap=COLORMAP, 
-#   variable="temp", 
-#   level=LEVEL_LOW, 
-#   framerate=FRAME_RATE,
-#   figure_size=FIGURE_SIZE)
-
-println("  - Animating level $LEVEL_HIGH -> $filename_high")
-animate(input_path, output_file=filename_high, 
+println("  - Animating level $LEVEL_HIGH -> $filename")
+animate(input_path, output_file=filename,
   projection=PROJECTION, 
   colorrange=COLOR_RANGE,
   colormap=COLORMAP, 
-  variable="temp", 
+  variable=ANIM_VAR,
   level=LEVEL_HIGH, 
   framerate=FRAME_RATE,
   figure_size=FIGURE_SIZE)
 
-println("\nAnimation finished. Output is in the '$ANIM_INPUT_DIR' directory.")
+println("\nAnimation finished. Output is in '$filename'.")

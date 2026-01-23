@@ -27,8 +27,9 @@ const CONTINUATION_RUN_NUMBER = 1
 
 
 # Animation settings
+const ANIM_INPUT_DIR = joinpath(OUTPUT_DIR, "run_$(RUN_ID)_0001")  # or replace with something like "year3_T85/run_a_0001"
 const VARIANT = "contrast"
-const ANIM_INPUT_DIR = "year3_T85/run_a_0001"
+const ANIM_VAR = "humid"  # temp, humid
 const LEVEL_LOW = 1
 const LEVEL_HIGH = NLAYERS - 1
 const FRAME_RATE = 15
