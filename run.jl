@@ -17,6 +17,7 @@ println("  - Solar Constant: $SOLAR_CONSTANT W/m²")
 
 spectral_grid = SpectralGrid(trunc=TRUNC, nlayers=NLAYERS)
 planet = Earth(spectral_grid, solar_constant=SOLAR_CONSTANT)
+longwave = JeevanjeeRadiation(spectral_grid, emissivity_atmosphere=EMISSIVITY_ATMOSPHERE)
 
 mkpath(OUTPUT_DIR)
 output = NetCDFOutput(spectral_grid, 
@@ -27,16 +28,17 @@ output = NetCDFOutput(spectral_grid,
 
 if CONTINUATION
   initial_conditions = StartFromFile(path=CONTINUATION_DIR, id=CONTINUATION_ID, run_number=CONTINUATION_RUN_NUMBER)
-  model = PrimitiveWetModel(spectral_grid, planet=planet, output=output, initial_conditions=initial_conditions)
+  model = PrimitiveWetModel(spectral_grid, planet=planet, output=output, longwave_radiation=longwave, initial_conditions=initial_conditions)
 else
-  model = PrimitiveWetModel(spectral_grid, planet=planet, output=output)
+  model = PrimitiveWetModel(spectral_grid, planet=planet, output=output, longwave_radiation=longwave)
 end
 
 add!(model, ProgressTxt(every_n_percent=1)) # For continuous output.
 
 # Add the variables we want to save to the output
-add!(model, SpeedyWeather.TemperatureOutput())
-add!(model, SpeedyWeather.HumidityOutput())
+add!(model, SpeedyWeather.TemperatureOutput())  # "temp"
+add!(model, SpeedyWeather.HumidityOutput())  # "humid"
+add!(model, SpeedyWeather.CloudTopOutput())  # "cloud_top"
 
 simulation = initialize!(model, time=START_DATE)
 println("Setup complete.")
