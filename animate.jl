@@ -17,8 +17,8 @@ include(config_file_to_load)
 println("\nGenerating animations...")
 input_path = joinpath(ANIM_INPUT_DIR, "output.nc");
 
-# Generate informative filenames automatically
-filename = joinpath(ANIM_INPUT_DIR, "temp_sc$(SOLAR_CONSTANT)_$(ANIM_VAR)_l$(LEVEL_HIGH)_$(VARIANT).mp4")
+emissivity_pct = round(Int, EMISSIVITY * 100)
+filename = joinpath(ANIM_INPUT_DIR, "temp_em$(emissivity_pct)_$(ANIM_VAR)_l$(LEVEL_HIGH)_$(VARIANT).mp4")
 
 println("  - Animating level $LEVEL_HIGH -> $filename")
 animate(input_path, output_file=filename,
